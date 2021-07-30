@@ -23,11 +23,26 @@ var colors1 = ["purple", "blue", "green", "yellow", "pink"]
 var colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
 // Expected output example (can be a different order): ["saffron", "aquamarine", "periwinkle", "indigo", "ochre"]
 
-
+describe("shuffleArray", () => {
+    var colors1 = ["purple", "blue", "green", "yellow", "pink"]
+    var colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
+    test("removes the first item from the array and shuffles the remaining content.", () => {
+      expect(shuffleArray(colors1)).toEqual()
+    })
+  })
+// The test above gives an expected error of shuffleArray is not defined
 
 // b) Create the function that makes the test pass.
 
-
+const shuffleArray = (array) => {
+    let shuffled = array.slice(1, array.length)
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value)
+    return shuffled
+}
+console.log(shuffleArray(colors1));
+console.log(shuffleArray(colors2))
 
 // --------------------2) Create a function that takes an array of numbers and returns an array of the minimum and maximum numbers in that order.
 
@@ -35,7 +50,7 @@ var colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saf
 
 var nums1 = [3, 56, 90, -8, 0, 23, 6]
 // Expected output: [-8, 90]
-var nums2 = [109, 5, 9, 67 8, 24]
+var nums2 = [109, 5, 9, 67, 8, 24]
 // Expected output: [5, 109]
 
 

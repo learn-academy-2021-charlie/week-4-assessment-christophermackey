@@ -7,9 +7,9 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 1. What is an instance variable in Ruby? How is it different from other variables?
 
-  Your answer:
+  Your answer: An instance variable is a variable inside a class. It is locally scoped and can be accessed by instances of the class with a getter and setter method or attr_accessor. 
 
-  Researched answer:
+  Researched answer: 
 
 
 
@@ -39,7 +39,7 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 5. What is the difference between a class and an object?
 
-  Your answer:
+  Your answer: 
 
   Researched answer:
 
@@ -47,9 +47,9 @@ Then, research the question to expand on your answer. Even if you feel you have 
 
 6. STRETCH: What is `attr_accessor`?
 
-  Your answer:
+  Your answer: attr_accessor is a shortcut to the setter and getter methods. It allows us to more easily access values within a class by directly calling its variable.
 
-  Researched answer:
+  Researched answer: attr_accessor
 
 
 
