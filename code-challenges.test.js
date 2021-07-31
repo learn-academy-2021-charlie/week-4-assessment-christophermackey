@@ -27,10 +27,14 @@ describe("shuffleArray", () => {
     var colors1 = ["purple", "blue", "green", "yellow", "pink"]
     var colors2 = ["chartreuse", "indigo", "periwinkle", "ochre", "aquamarine", "saffron"]
     test("removes the first item from the array and shuffles the remaining content.", () => {
-      expect(shuffleArray(colors1)).toEqual()
-    })
+      expect(shuffleArray(colors1)).toEqual(expect.arrayContaining(["green", "blue", "yellow", "pink"]))
+      expect(shuffleArray(colors2)).toEqual(expect.arrayContaining(["saffron", "aquamarine", "periwinkle", "indigo", "ochre"])
+    )})
   })
-// The test above gives an expected error of shuffleArray is not defined
+//At first, I tried using my function logic inside of the test expect.toEqual() method but kept getting an error.
+//I also tried using colors1.includes() inside of that method but got an error because that only returns a boolean value.
+//After some hardcore googling I found the jestjs.io website with 50+ different expect methods!
+//The method that ended up working was expect.arrayContaining()
 
 // b) Create the function that makes the test pass.
 
@@ -43,6 +47,9 @@ const shuffleArray = (array) => {
 }
 console.log(shuffleArray(colors1));
 console.log(shuffleArray(colors2))
+//For the function I used a slice() method on the array to essentially remove the first value. 
+//I followed that with an array shuffler logic courtesy of stack overflow.
+//The combination of the two allows the array to be shuffled without original 0th index present.
 
 // --------------------2) Create a function that takes an array of numbers and returns an array of the minimum and maximum numbers in that order.
 
