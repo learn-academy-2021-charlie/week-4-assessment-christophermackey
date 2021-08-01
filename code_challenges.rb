@@ -14,6 +14,7 @@ letter_t = 't'
 #use .select method which returns a new array with in which the given block returns a true value
     #in the .select block, the value is passed in pipes 
 #use .includes? on value and pass in letter as argument
+#implicit return will return the new array with values that contain selected letter
 
 def drank array, letter
     array.select { |value| value.include?(letter)}
@@ -31,7 +32,18 @@ album2 = 'Sgt Pepper'
 album3 = 'Abbey Road'
 # Expected output: 'bby Rd'
 
+#create method called theBeatles
+#method will take in string
+#change characters in sting to lowercase with .downcase
+#delete vowels with .delete "aeiou"
+#the beatles rock!
+def theBeatles string
+    string.downcase.delete "aeiou"
+end
 
+p theBeatles album1
+p theBeatles album2
+p theBeatles album3
 
 # --------------------3a) Create a class called Bike that is initialized with a model, wheels, and current_speed. The default number of wheels is 2. The current_speed should start at 0. Create a get_info method that returns a sentence with all the data from the bike object.
 
