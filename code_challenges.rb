@@ -49,8 +49,21 @@ p theBeatles album3
 
 # Expected output example: 'The Trek bike has 2 wheels and is going 0 mph.'
 
-
-
+class Bike
+    def initialize model, num
+        @model = model
+        @wheels = 2
+        @current_speed = 0
+    end
+    def pedal_faster num
+        @current_speed += num
+    end
+    def get_info
+        "The #{@model} bike has #{@wheels} wheel and is going #{@current_speed} mph."    
+    end
+end
+new_bike = Bike.new 'Trek', 10
+p new_bike.get_info
 # -------------------3b) Add the ability to pedal faster and brake. The pedal_faster method should increase the speed. The brake method should decrease the speed. The bike cannot go negative speeds.
 
 # Expected output example: my_bike.pedal_faster 10 => 10
